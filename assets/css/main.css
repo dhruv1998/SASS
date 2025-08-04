@@ -3800,13 +3800,25 @@ input, select, textarea {
 			opacity: 0;
 		}
 
+		@media screen and (max-width: 480px) {
+			#sidebar nav ul {
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+
+			#sidebar nav ul li {
+				min-width: auto;
+				margin: 0.5em;
+			}
+		}
+
 		@media screen and (max-width: 1280px) {
 
 			#sidebar {
 				height: 3.5em;
 				left: 0;
 				line-height: 3.5em;
-				overflow: hidden;
+				overflow: auto;
 				padding: 0;
 				text-align: center;
 				top: 0;
@@ -3864,9 +3876,9 @@ input, select, textarea {
 
 		@media screen and (max-width: 736px) {
 
-			#sidebar {
+			/* #sidebar {
 				display: none;
-			}
+			} */
 
 		}
 
