@@ -6,164 +6,243 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+        /* Default intro style */
+		#intro {
+			background: url("images/pic07.jpg") center center / cover no-repeat;
+			position: relative;
+			min-height: 70vh; /* full screen height */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			color: #fff;
+		}
+
+		/* Overlay for readability */
+		#intro::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: rgba(0,0,0,0.4);
+		}
+
+		#intro .inner {
+			position: relative;
+			z-index: 1;
+			padding: 0 20px;
+		}
+
+		/* Mobile fix: push content below navbar */
+		@media (max-width: 768px) {
+			#intro {
+				padding-top: 80px; /* adjust to match your header height */
+			}
+		}
+
+		/* ========= LOGO IN SIDEBAR ========= */
+		#sidebar .logo-wrap{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 1.25rem 0 1rem;
+			margin-bottom: 1.25rem;
+		}
+		#sidebar .logo-wrap a{
+			display:inline-block;
+			line-height:0;
+			text-decoration: none !important;
+			border-bottom: none !important;
+		}
+		#sidebar .logo-wrap img{
+			display:block;
+			max-width: 160px;   /* desktop size */
+			height:auto;
+			filter: drop-shadow(0 2px 8px rgba(0,0,0,.25)); /* gentle lift */
+		}
+		@media (max-width: 980px){
+			#sidebar .logo-wrap img{
+				max-width: 140px; /* tablet/mobile */
+			}
+		}
+		@media (max-width: 480px){
+			#sidebar .logo-wrap{
+				padding: 1rem 0 .75rem;
+				margin-bottom: 1rem;
+			}
+			#sidebar .logo-wrap img{
+				max-width: 55px; /* small phones */
+			    height: 6vh;
+				padding-top: 5px;
+			}
+		}
+		/* =================================== */
+    </style>
 	</head>
 	<body class="is-preload">
 		<!-- Sidebar -->
-			<section id="sidebar">
+		<section id="sidebar">
+			<div class="inner">
+				<!-- Logo (added) -->
+				<div class="logo-wrap">
+					<a href="index.html" style="text-decoration: none;" aria-label="SASS Home">
+						<img src="images/logo.png" alt="SASS Logo">
+					</a>
+				</div>
+
+				<nav>
+					<ul>
+						<li><a href="index.html">Welcome</a></li>
+						<li><a href="generic.html">About Us</a></li>
+						<li><a href="organisation.html">Organisation</a></li>
+						<li><a href="membership.html">Membership</a></li>
+						<li><a href="documents.html">Important Documents</a></li>
+						<li><a href="#three">Get in touch</a></li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Intro -->
+			<section id="intro" class="wrapper style1 fullscreen fade-up">
 				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="index.html">Welcome</a></li>
-							<li><a href="generic.html">About Us</a></li>
-							<li><a href="organisation.html">Organisation</a></li>
-							<li><a href="membership.html">Membership</a></li>
-							<li><a href="documents.html">Important Documents</a></li>
-							<li><a href="#three">Get in touch</a></li>
-						</ul>
-					</nav>
+					<h1>Welcome to SASS</h1>
+					<!-- <p>Sainik Ardhyasainik Seva Sangathan (SASS) – Together for Welfare and Nation Building</p>
+					<ul class="actions">
+						<li><a href="#about" class="button scrolly">Learn more</a></li>
+					</ul> -->
 				</div>
 			</section>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>Welcome to SASS</h1>
-							<p>Sainik Ardhyasainik Seva Sangathan (SASS) – Together for Welfare and Nation Building</p>
-							<ul class="actions">
-								<li><a href="#about" class="button scrolly">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- About Us -->
-				<section id="about" class="wrapper style2 fade-up spotlights">
-					<section>
+			<!-- About Us -->
+			<section id="about" class="wrapper style2 fade-up spotlights">
+				<section>
 					<a href="generic.html" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
 					<div class="content">
-					<div class="inner">
-						<h2>About Us – Who are we?</h2>
-						<p>Sainik Ardhyasainik Seva Sangathan (SASS) is an Association of Persons (AOP), formed by 8 veteran officers from the Indian Armed Forces in 2025. With a shared commitment to welfare, camaraderie, and nation-building, SASS supports:
-						<br><strong>• Indian Army, Navy, Air Force, Coast Guard</strong><br>
-						<strong>• Paramilitary Forces:</strong> Assam Rifles, BSF, CISF, CRPF, ITBP, NSG, SSB<br>
-						<strong>• Civilians paid from Defence estimates, DPSUs, DRDO, and MoD organisations</strong><br>
-						<br>Guided by the spirit of “Nourishing Each Other (परस्परं भावयन्त:),” SASS focuses on welfare initiatives for health, wellness, and quality of life.</p>
-						<ul class="actions">
-							<li><a href="generic.html" class="button scrolly">Learn more</a></li>
-						</ul>
+						<div class="inner">
+							<h2>About Us – Who are we?</h2>
+							<p>Sainik Ardhyasainik Seva Sangathan (SASS) is an Association of Persons (AOP), formed by 8 veteran officers from the Indian Armed Forces in 2025. With a shared commitment to welfare, camaraderie, and nation-building, SASS supports:
+							<br><strong>• Indian Army, Navy, Air Force, Coast Guard</strong><br>
+							<strong>• Paramilitary Forces:</strong> Assam Rifles, BSF, CISF, CRPF, ITBP, NSG, SSB<br>
+							<strong>• Civilians paid from Defence estimates, DPSUs, DRDO, and MoD organisations</strong><br>
+							<br>Guided by the spirit of “Nourishing Each Other (परस्परं भावयन्त:),” SASS focuses on welfare initiatives for health, wellness, and quality of life.</p>
+							<ul class="actions">
+								<li><a href="generic.html" class="button scrolly">Learn more</a></li>
+							</ul>
+						</div>
 					</div>
-					</div>
-					</section>
 				</section>
+			</section>
 
-				<!-- Membership -->
-				<section id="membership" class="wrapper style2 fade-up spotlights">
-					<section>
+			<!-- Membership -->
+			<section id="membership" class="wrapper style2 fade-up spotlights">
+				<section>
 					<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="center center" /></a>
 					<div class="content">
-					<div class="inner">
-						<h2>Why Become a Member – Strength in Unity</h2>
-						<ul>
-							<li><strong>Collective Bargaining Power:</strong> Better deals and services at no extra cost.</li>
-							<li><strong>Welfare-Driven Mission:</strong> Initiatives focused on health, financial security & support.</li>
-							<li><strong>Transparent Access:</strong> No profit motive—members deal directly with service providers.</li>
-							<li><strong>Lifelong Support:</strong> Benefits remain active once membership conditions are met.</li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#numbers" class="button scrolly">Learn more</a></li>
-						</ul>
+						<div class="inner">
+							<h2>Why Become a Member – Strength in Unity</h2>
+							<ul>
+								<li><strong>Collective Bargaining Power:</strong> Better deals and services at no extra cost.</li>
+								<li><strong>Welfare-Driven Mission:</strong> Initiatives focused on health, financial security & support.</li>
+								<li><strong>Transparent Access:</strong> No profit motive—members deal directly with service providers.</li>
+								<li><strong>Lifelong Support:</strong> Benefits remain active once membership conditions are met.</li>
+							</ul>
+							<ul class="actions">
+								<li><a href="#numbers" class="button scrolly">Learn more</a></li>
+							</ul>
+						</div>
 					</div>
-					</div>
-					</section>
 				</section>
+			</section>
 
-				<!-- In Numbers -->
-				<section id="numbers" class="wrapper style2 fade-up spotlights">
-					<section>
+			<!-- In Numbers -->
+			<section id="numbers" class="wrapper style2 fade-up spotlights">
+				<section>
 					<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="center center" /></a>
 					<div class="content">
-					<div class="inner">
-						<h2>In Numbers — Our Growing Impact</h2>
-						<ul>
-							<li><strong>Founded:</strong> 2025</li>
-							<li><strong>Potential Members:</strong> 50 Lakhs (approx.)</li>
-							<li><strong>Members Served:</strong> 15,000+ (and counting)</li>
-							<li><strong>Lives Covered:</strong> 40,000+ under Group Mediclaim</li>
-							<li><strong>Network Hospitals:</strong> 8000+ for Cashless Claims</li>
-							<li><strong>States & UTs:</strong> 28 States & 8 UTs Represented</li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#group-policy" class="button scrolly">Learn more</a></li>
-						</ul>
+						<div class="inner">
+							<h2>In Numbers — Our Growing Impact</h2>
+							<ul>
+								<li><strong>Founded:</strong> 2025</li>
+								<li><strong>Potential Members:</strong> 50 Lakhs (approx.)</li>
+								<li><strong>Members Served:</strong> 15,000+ (and counting)</li>
+								<li><strong>Lives Covered:</strong> 40,000+ under Group Mediclaim</li>
+								<li><strong>Network Hospitals:</strong> 8000+ for Cashless Claims</li>
+								<li><strong>States & UTs:</strong> 28 States & 8 UTs Represented</li>
+							</ul>
+							<ul class="actions">
+								<li><a href="#group-policy" class="button scrolly">Learn more</a></li>
+							</ul>
+						</div>
 					</div>
-					</div>
-					</section>
 				</section>
+			</section>
 
-				<!-- Group Wellness Policy -->
-				<section id="group-policy" class="wrapper style3 fade-up spotlights">
-					<section>
+			<!-- Group Wellness Policy -->
+			<section id="group-policy" class="wrapper style3 fade-up spotlights">
+				<section>
 					<a href="#" class="image"><img src="images/pic04.jpg" alt="" data-position="center center" /></a>
 					<div class="content">
-					<div class="inner">
-						<h2>Group Wellness Policy (2025–2026) – Key Benefits at a Glance</h2>
-						<ul>
-							<li>Coverage for pre-existing diseases from Day 1</li>
-							<li>No co-pay or medical test required</li>
-							<li>No membership fee</li>
-							<li>Premium based on age, family size, and risk cover</li>
-							<li>Coverage from ₹3 to ₹15 lakhs (family floater)</li>
-							<li>Cashless at 8000+ network hospitals</li>
-							<li>Disease-wise caps for specified treatments</li>
-							<li>365-day policy validity</li>
-							<li>Room rent limit: 1.5% of sum insured (ICU: 2.5%)</li>
-							<li>Maternity cover with waived waiting period</li>
-							<li>AYUSH treatments: 100% of Base Sum</li>
-							<li>Robotic surgery, stem cell therapy: 50% of risk cover</li>
-							<li>Coverage includes infants, siblings, parents, in-laws (conditions apply)</li>
-							<li>Can be used alongside ECHS and CGHS</li>
-							<li>Direct premium payment to Insurer’s bank account</li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#testimonials" class="button scrolly">Learn more</a></li>
-						</ul>
-					</div>
+						<div class="inner">
+							<h2>Group Wellness Policy (2025–2026) – Key Benefits at a Glance</h2>
+							<ul>
+								<li>Coverage for pre-existing diseases from Day 1</li>
+								<li>No co-pay or medical test required</li>
+								<li>No membership fee</li>
+								<li>Premium based on age, family size, and risk cover</li>
+								<li>Coverage from ₹3 to ₹15 lakhs (family floater)</li>
+								<li>Cashless at 8000+ network hospitals</li>
+								<li>Disease-wise caps for specified treatments</li>
+								<li>365-day policy validity</li>
+								<li>Room rent limit: 1.5% of sum insured (ICU: 2.5%)</li>
+								<li>Maternity cover with waived waiting period</li>
+								<li>AYUSH treatments: 100% of Base Sum</li>
+								<li>Robotic surgery, stem cell therapy: 50% of risk cover</li>
+								<li>Coverage includes infants, siblings, parents, in-laws (conditions apply)</li>
+								<li>Can be used alongside ECHS and CGHS</li>
+								<li>Direct premium payment to Insurer’s bank account</li>
+							</ul>
+							<ul class="actions">
+								<li><a href="#testimonials" class="button scrolly">Learn more</a></li>
+							</ul>
+						</div>
 				    </div>
-					</section>
 				</section>
+			</section>
 
-				<!-- Testimonials -->
-				<section id="testimonials" class="wrapper style1 fade-up">
-					<div class="inner">
-						<h2>What Our Members Say — Voices from the Community</h2>
-						<p>Real stories. Genuine experiences.</p>
-						<p><em>Testimonials here (Entries through the feedback form will be directly pasted here)</em></p>
-					</div>
-				</section>
-			</div>
+			<!-- Testimonials -->
+			<section id="testimonials" class="wrapper style1 fade-up">
+				<div class="inner">
+					<h2>What Our Members Say — Voices from the Community</h2>
+					<p>Real stories. Genuine experiences.</p>
+					<p><em>Testimonials here (Entries through the feedback form will be directly pasted here)</em></p>
+				</div>
+			</section>
+		</div>
 
 		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; SASS. All rights reserved.</li>
-						<li><a href="privacy.html">Privacy Policy</a></li>
-						<li><a href="terms.html">Terms and Conditions</a></li>
-						<li><a href="cancellation.html">Cancellation Policy</a></li>
-					</ul>
-				</div>
-			</footer>
+		<footer id="footer" class="wrapper style1-alt">
+			<div class="inner">
+				<ul class="menu">
+					<li>&copy; SASS. All rights reserved.</li>
+					<li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="terms.html">Terms and Conditions</a></li>
+					<li><a href="cancellation.html">Cancellation Policy</a></li>
+				</ul>
+			</div>
+		</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
